@@ -1600,7 +1600,7 @@ pub fn endRendering(self: *Self, opts: endOptions) void {
 
     // The build phase is over, so stop capturing the widget tree for
     // `Debug.dumpFrame` before the inspector/dialogs below register widgets.
-    if (dvui.debug.capture_state == .capturing) dvui.debug.capture_state = .off;
+    dvui.debug.capturing = false;
 
     if (opts.show_toasts) {
         dvui.toastsShow(null, dvui.windowRect());
